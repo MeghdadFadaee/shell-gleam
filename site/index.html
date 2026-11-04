@@ -1,0 +1,75 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="theme-color" content="#f5f3eb">
+  <meta name="description" content="A brighter first look at your Linux server. ShellGleam turns SSH login into a beautiful, configurable dashboard. Open source, small footprint, reversible setup.">
+  <meta property="og:title" content="ShellGleam — before your first command">
+  <meta property="og:description" content="A beautiful little dashboard. A much better hello. Meet your server at a glance.">
+  <meta property="og:type" content="website">
+  <meta property="og:image" content="https://meghdadfadaee.github.io/shell-gleam/social.svg">
+  <meta name="color-scheme" content="light">
+  <title>ShellGleam — a brighter first look</title>
+  <link rel="icon" href="favicon.svg" type="image/svg+xml">
+  <link rel="stylesheet" href="style.css">
+  <script src="app.js" defer></script>
+</head>
+<body>
+<a class="skip" href="#main">Skip to content</a>
+<header class="site-header wrap">
+  <a class="brand" href="#" aria-label="ShellGleam home"><span class="brand-mark" aria-hidden="true"><svg viewBox="0 0 64 64" fill="none" aria-hidden="true"><path d="M32 6v52M6 32h52M14 14l36 36M14 50l36-36" stroke="currentColor" stroke-width="7" stroke-linecap="round"/></svg></span>ShellGleam<span class="brand-dot">.</span></a>
+  <nav aria-label="Main navigation"><a href="#preview">The dashboard</a><a href="#configure">Make it yours</a><a class="nav-github" href="https://github.com/meghdadfadaee/shell-gleam">GitHub <span aria-hidden="true">↗</span></a></nav>
+</header>
+<main id="main">
+<section class="hero wrap" aria-labelledby="hero-title">
+  <div class="hero-copy">
+    <p class="eyebrow"><span class="live-dot"></span> A SMALL UPGRADE TO YOUR EVERYDAY SSH</p>
+    <h1 id="hero-title">A better hello<br>from your<br><em>server.</em><span class="hero-spark" aria-hidden="true"><svg viewBox="0 0 64 64" fill="none" aria-hidden="true"><path d="M32 6v52M6 32h52M14 14l36 36M14 50l36-36" stroke="currentColor" stroke-width="7" stroke-linecap="round"/></svg></span></h1>
+    <p class="hero-description">All the signs of life, right when you log in.<br>A beautiful little dashboard. A much better first glance.</p>
+    <div class="hero-actions"><a class="button button-dark" href="#install">Give your shell a gleam <span aria-hidden="true">↗</span></a><a class="text-link" href="#preview">Take a look <span aria-hidden="true">↓</span></a></div>
+    <p class="hero-meta">OPEN SOURCE <span> / </span> PYTHON STDLIB <span> / </span> MADE FOR LINUX</p>
+  </div>
+  <div class="hero-visual" id="preview">
+    <div class="visual-label"><span>01 / YOUR NEXT LOGIN</span><span>LIVE PREVIEW <i class="live-dot"></i></span></div>
+    <div class="terminal">
+      <div class="terminal-chrome"><span class="traffic" aria-hidden="true"><i></i><i></i><i></i></span><span>orbit — ssh</span><span aria-hidden="true">⌘</span></div>
+      <div class="terminal-body"><p class="terminal-command"><span>~ ❯</span> ssh orbit</p><pre id="dashboard" aria-label="Illustrative server login dashboard"></pre><p class="terminal-prompt"><span>orbit:~$</span> <i class="cursor" aria-hidden="true"></i></p></div>
+      <div class="terminal-footer"><span><i class="live-dot"></i> READY BEFORE YOU ARE</span><span>NO LOGIN NETWORK REQUESTS</span></div>
+    </div>
+    <div class="preview-controls"><div class="segmented" role="group" aria-label="Preview health state"><button type="button" class="selected" data-state="healthy" aria-pressed="true">All good</button><button type="button" data-state="attention" aria-pressed="false">Needs a look</button></div><span>Demo data. Real possibility.</span></div>
+    <div class="hand-note" aria-hidden="true">your server, at a glance <span>↖</span></div>
+    <noscript><p>This interactive preview needs JavaScript. The installer and documentation work without it.</p></noscript>
+  </div>
+</section>
+<div class="spec-strip"><div class="wrap spec-inner"><span><b>01</b> Install once</span><span><b>02</b> Every login user</span><span><b>03</b> Your rules, your look</span><span><b>04</b> Undo anytime</span></div></div>
+<section class="intro wrap" aria-labelledby="intro-title">
+  <div><p class="eyebrow">LESS DIGGING. MORE KNOWING.</p><h2 id="intro-title">The first ten commands,<br><em>in one first glance.</em></h2></div>
+  <p>Uptime. Memory. That container acting up.<br>ShellGleam brings the useful bits together, so you can spend less time checking in and more time getting on with it.</p>
+</section>
+<section class="features wrap" aria-label="Dashboard features">
+  <article><span class="feature-number">01 / SYSTEM</span><div class="feature-graphic metric-graphic" aria-hidden="true"><span>MEMORY <strong>23%</strong></span><div><i></i></div><span>LOAD <strong>0.24 / 8</strong></span></div><h3>A pulse, not a puzzle.</h3><p>Uptime, CPU load, memory and disks. Clear bars and adjustable thresholds tell you where things stand.</p></article>
+  <article><span class="feature-number">02 / RUNTIME</span><div class="feature-graphic runtime-graphic" aria-hidden="true"><span><i class="live-dot"></i> nginx <small>online</small></span><span><i class="live-dot"></i> docker <small>4 running</small></span></div><h3>Know what’s running.</h3><p>Pick the systemd services you care about. See local Docker state and actual healthcheck results.</p></article>
+  <article><span class="feature-number">03 / HEALTH</span><div class="feature-graphic health-graphic" aria-hidden="true"><span class="health-icon">✓</span><span>Nothing to chase.<small>NO REBOOT NEEDED</small></span></div><h3>A little peace of mind.</h3><p>Failed units, cached package updates and reboot notices. Unknown data stays unknown. No false confidence.</p></article>
+</section>
+<section class="config-section" id="configure" aria-labelledby="config-title"><div class="wrap config-layout">
+  <div class="config-copy"><p class="eyebrow">FEELS LIKE YOUR PLACE</p><h2 id="config-title">Your server.<br><em>Your kind of hello.</em></h2><p>A name, a few preferences, and you’re home.<br>Make it yours here, then copy your install command.</p><a class="text-link" href="https://github.com/meghdadfadaee/shell-gleam/blob/main/docs/configuration.md">Explore every JSON setting <span aria-hidden="true">↗</span></a><div class="config-footnote"><span aria-hidden="true">↳</span> Preview only. Nothing here connects to your server.</div></div>
+  <form class="config-card" id="config-form">
+    <div class="card-caption"><span>YOUR SHELLGLEAM RECIPE</span><span aria-hidden="true">✳︎</span></div>
+    <label for="server-name">Call your server something nice</label><input id="server-name" name="title" value="ORBIT" placeholder="ORBIT" maxlength="40" autocomplete="off" spellcheck="false">
+    <fieldset><legend>The small details</legend><label class="switch-row" for="ascii-mode"><span>Keep it classic<small>ASCII symbols for simpler terminals</small></span><input id="ascii-mode" type="checkbox" name="ascii"><span class="switch" aria-hidden="true"></span></label><label class="switch-row" for="color-mode"><span>A little color<small>Make the important things stand out</small></span><input id="color-mode" type="checkbox" name="color" checked><span class="switch" aria-hidden="true"></span></label></fieldset>
+    <div class="config-tip"><span aria-hidden="true">↳</span> Services, disks and thresholds? The setup wizard has you covered.</div>
+  </form>
+</div></section>
+<section class="install-section wrap" id="install" aria-labelledby="install-title">
+  <div class="install-heading"><div><p class="eyebrow">FROM BLANK TO BRIGHT</p><h2 id="install-title">One line.<br><em>A better login.</em></h2></div><p>Ubuntu or Debian. Python 3.9+. Bash and curl.<br>The installer asks for sudo when it needs it.</p></div>
+  <div class="install-box"><div class="install-box-top"><span><span class="tiny-square"></span> RUN ON YOUR SERVER</span><button type="button" class="copy-button" id="copy-command">Copy command <span aria-hidden="true">↗</span></button></div><pre><code id="install-command">curl -fsSL https://meghdadfadaee.github.io/shell-gleam/setup.sh | bash</code></pre><div class="install-box-bottom"><span>SHA-256 verified package <span aria-hidden="true">·</span> No login network requests</span><a href="setup.sh">Read the installer ↗</a></div></div>
+  <p id="copy-status" class="copy-status" role="status" aria-live="polite"></p>
+  <div class="install-details"><div><span class="detail-icon" aria-hidden="true">↗</span><h3>Want a guided setup?</h3><p>Add <code>--wizard</code> to choose a name, services and disks in your terminal.</p><button type="button" class="text-link" id="wizard-toggle" aria-pressed="false">Use the setup wizard <span aria-hidden="true">→</span></button></div><div><span class="detail-icon" aria-hidden="true">↶</span><h3>Easy come. Easy go.</h3><p>Original login files are backed up. Restore them with one command.</p><code class="undo-code">sudo /opt/shell-gleam/setup.sh uninstall</code></div></div>
+  <details class="requirements"><summary>The details before you install <span aria-hidden="true">+</span></summary><div><p>Supports Ubuntu/Debian with systemd, Python 3.9+, GNU timeout, Debian run-parts, OpenSSH and standard PAM MOTD/exec modules. Setup checks compatibility before making changes. Docker is optional.</p><p>Installation replaces two PAM message-display entries, backs up the originals, and leaves authentication rules and SSH daemon settings unchanged. Additional MOTD snippets may still appear. Checksum verification detects corruption and package mismatch; it is not an independent publisher signature.</p><p>Prefer to read before running? Download <a href="setup.sh">setup.sh</a> and inspect it. For scripted pipelines, enable <code>set -o pipefail</code> to catch curl failures. <a href="https://github.com/meghdadfadaee/shell-gleam/blob/main/docs/operations.md">Read the operations guide ↗</a></p></div></details>
+</section>
+<section class="closing wrap"><span class="closing-mark" aria-hidden="true"><svg viewBox="0 0 64 64" fill="none" aria-hidden="true"><path d="M32 6v52M6 32h52M14 14l36 36M14 50l36-36" stroke="currentColor" stroke-width="7" stroke-linecap="round"/></svg></span><p>A little less noise.<br><em>A little more gleam.</em></p><a class="button button-outline" href="https://github.com/meghdadfadaee/shell-gleam">Find it on GitHub <span aria-hidden="true">↗</span></a></section>
+</main>
+<footer class="site-footer wrap"><a class="brand" href="#"><span class="brand-mark" aria-hidden="true"><svg viewBox="0 0 64 64" fill="none" aria-hidden="true"><path d="M32 6v52M6 32h52M14 14l36 36M14 50l36-36" stroke="currentColor" stroke-width="7" stroke-linecap="round"/></svg></span>ShellGleam.</a><p>Small footprint. Open source. Yours to make better.</p><div><a href="https://github.com/meghdadfadaee/shell-gleam/blob/main/LICENSE">MIT license</a><a href="https://github.com/meghdadfadaee/shell-gleam">Source ↗</a></div></footer>
+</body>
+</html>

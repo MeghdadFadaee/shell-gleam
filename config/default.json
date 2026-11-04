@@ -1,0 +1,23 @@
+{
+  "title": "",
+  "address": "auto",
+  "width": 72,
+  "color": true,
+  "ascii": false,
+  "sections": ["system", "runtime", "health"],
+  "services": [
+    {"unit": "nginx.service", "label": "Nginx", "required": false},
+    {"unit": "docker.service", "label": "Docker", "required": false}
+  ],
+  "disks": ["/"],
+  "docker": true,
+  "command_timeout": 1.0,
+  "memory_warning": 75,
+  "memory_critical": 90,
+  "disk_warning": 75,
+  "disk_critical": 90,
+  "load_warning": 0.7,
+  "load_critical": 1.0,
+  "updates_max_age_hours": 48,
+  "footer": ""
+}
