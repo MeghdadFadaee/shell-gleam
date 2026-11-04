@@ -5,6 +5,7 @@ on:
   workflow_dispatch:
 permissions:
   contents: read
+  pages: read
 concurrency:
   group: pages
   cancel-in-progress: false
@@ -12,18 +13,22 @@ jobs:
   build:
     runs-on: ubuntu-latest
     steps:
-      - uses: actions/checkout@v7
+      - uses: actions/checkout@v7.0.1
         with:
           persist-credentials: false
-      - uses: actions/setup-python@v7
+      - uses: actions/setup-python@v7.1.0
         with:
-          python-version: '3.13'
+          python-version: '3.x'
+          check-latest: true
       - run: python -m unittest discover -s tests -v
+      - name: Read GitHub Pages configuration
+        id: pages
+        uses: actions/configure-pages@v6.0.0
       - name: Build website and installer
         env:
-          SITE_URL: https://${{ github.repository_owner }}.github.io/${{ github.event.repository.name }}
+          SITE_URL: ${{ steps.pages.outputs.base_url }}
         run: python scripts/build_site.py --site-url "$SITE_URL"
-      - uses: actions/upload-pages-artifact@v5
+      - uses: actions/upload-pages-artifact@v5.0.0
         with:
           path: _site
   deploy:
@@ -38,4 +43,4 @@ jobs:
     steps:
       - name: Deploy GitHub Pages
         id: deployment
-        uses: actions/deploy-pages@v5
+        uses: actions/deploy-pages@v5.0.1

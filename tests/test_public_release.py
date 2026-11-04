@@ -48,6 +48,25 @@ class BuildTests(unittest.TestCase):
             with tarfile.open(Path(directory) / 'output' / release['archive']) as package:
                 self.assertFalse(any('local-secret' in name for name in package.getnames()))
 
+    def test_custom_domain_updates_all_public_install_urls(self):
+        with tempfile.TemporaryDirectory() as directory:
+            output = Path(directory)
+            release = builder.build(output, 'http://status.example.org/tools/shell-gleam/')
+            canonical = 'https://status.example.org/tools/shell-gleam'
+            self.assertEqual(release['site_url'], canonical)
+            for name in ('index.html', 'app.js', 'setup.sh'):
+                text = (output / name).read_text()
+                self.assertIn(canonical, text)
+                self.assertNotIn(builder.DEFAULT_SITE_URL, text)
+
+    def test_invalid_site_url_is_rejected_before_writing(self):
+        with tempfile.TemporaryDirectory() as directory:
+            output = Path(directory) / 'output'
+            for url in ('file:///etc', 'https://example.org/\';touch', 'https://example.org/\nnext'):
+                with self.subTest(url=url), self.assertRaises(ValueError):
+                    builder.build(output, url)
+            self.assertFalse(output.exists())
+
     def test_source_root_cannot_be_output(self):
         with self.assertRaises(ValueError):
             builder.build(ROOT, 'https://example.github.io/shell-gleam')

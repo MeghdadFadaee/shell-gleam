@@ -44,9 +44,19 @@ old package fails safely rather than silently installing another version.
 ## Forks and custom domains
 
 For another account or repository, update links in the README and `site/`.
-The workflow passes its own account/repository URL to `scripts/build_site.py`.
-For a custom domain, change the workflow's `SITE_URL` and the website's
-`BASE_URL` in `site/app.js` together.
+The workflow reads the canonical URL from GitHub Pages using `configure-pages`
+and passes it to `scripts/build_site.py`. The build applies that HTTPS URL to
+the website, command builder, metadata and bootstrap, including inherited custom
+domains. Configure custom domains in GitHub Pages settings; no source edit is
+needed for deployments. For a local custom-domain build, pass `--site-url`.
 
 The landing page has no external fonts, analytics, trackers or runtime assets.
 Its customization form only changes a local preview and generated command.
+
+## Dependency maintenance
+
+Actions use the latest reviewed stable release versions. Dependabot checks
+weekly and groups Action updates into one pull request. CI tests both the
+minimum supported Python and the latest stable Python 3; the Pages build also
+uses the latest stable Python 3 patch release. The runtime has no third-party
+Python packages or JavaScript dependencies.
